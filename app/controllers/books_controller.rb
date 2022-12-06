@@ -3,6 +3,7 @@ class BooksController < ApplicationController
         @books = Book.all
         #search for books by title
         @books = @books.where("title LIKE ?", "%#{params[:title]}%") if params[:title].present?
+        render json: @books
     end
     def create
         @book = Book.new(book_params)
