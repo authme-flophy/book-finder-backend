@@ -4,7 +4,7 @@
         name: Faker::Name.name,
         email: Faker::Internet.email,
         username: Faker::Internet.username,
-        password: Faker::Internet.password
+        password_digest: Faker::Internet.password
     )
 end
 30.times do
