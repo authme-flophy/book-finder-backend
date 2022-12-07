@@ -1,35 +1,50 @@
 class UsersController < ApplicationController
-    #create users and validate params
-    def create
-        @user = User.new(user_params)
-        if @user.save
-            render json: @user
-        else
-            render json: @user.errors, status: :unprocessable_entity
-        end
-    end
+    skip_before_action :redirect_user, only: [:new, :create]
 
     def show
         @user = User.find(params[:id])
-        render json: @user
     end
-   #update users and validate params
-    def update
-        @user = User.find(params[:id])
-        if @user.update(user_params)
-            render json: @user
+
+    def new
+        @user = User.new
+    end
+
+    def create
+        @user = User.new(user_params)
+
+        if @user.save
+            flash[:message] = "Account created, please log in!"
+            redirect_to login_path  
         else
-            render json: @user.errors, status: :unprocessable_entity
+            render :new
         end
     end
-    #delete users
+
+    def edit
+        @user = User.find(params[:id])
+    end
+
+    def update
+        @user = User.find(params[:id])
+        @user.update_attributes(user_params) 
+        if @user.save
+            flash[:message] = "Account successfully updated!"
+            redirect_to user_path(@user)   
+        else
+            render :edit 
+        end
+    end
+
     def destroy
         @user = User.find(params[:id])
+        Review.where(user_id: session[:user_id]).destroy_all
         @user.destroy
+        session.clear
+        redirect_to '/login' 
     end
+
     private
-    # Only allow a trusted parameter "white list" through.
+
     def user_params
-        params.require(:user).permit(:name, :email, :username, :password_digest, :password_confirmation)
+        params.require(:user).permit(:username, :password, :password_confirmation)
     end
-end
