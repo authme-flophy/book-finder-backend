@@ -25,7 +25,7 @@ module BookFinderBackend
     config.session_store :cookie_store, key: '_interslice_session'
     config.middleware.use ActionDispatch::Cookies
     config.middleware.use config.session_store, config.session_options
-    enerating a new resource.
+   # enerating a new resource.
     config.api_only = true
   end
 end # Configuration for the application, engines, and railties goes here.
