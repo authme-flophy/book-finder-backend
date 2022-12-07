@@ -1,13 +1,5 @@
 #create a user using the faker gem
 30.times do
-    User.create!(
-        name: Faker::Name.name,
-        email: Faker::Internet.email,
-        username: Faker::Internet.username,
-        password_digest: Faker::Internet.password
-    )
-end
-30.times do
  Book.create!(
         title: Faker::Book.title,
         author: Faker::Book.author,
@@ -16,15 +8,4 @@ end
  )
  
 end
-30.times do
-    Review.create!(
-        book_id: rand(1..30),
-        user_id: rand(1..30),
-        comment: Faker::Lorem.sentence(word_count: 3)
-    )
-end
-30.times do
-    Bookcategory.create!(
-        name: Faker::Book.name
-    )
-end
+
