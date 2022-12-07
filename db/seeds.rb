@@ -1,30 +1,24 @@
 #create a user using the faker gem
-30.times do
-    User.create!(
-        name: Faker::Name.name,
-        email: Faker::Internet.email,
-        username: Faker::Internet.username,
-        password: Faker::Internet.password
-    )
-end
-30.times do
- Book.create!(
-        title: Faker::Book.title,
-        author: Faker::Book.author,
-        likes: Faker::Number.number(digits: 2),
-        category_id: Faker::Number.number(digits: 1)
- )
- 
-end
-30.times do
-    Review.create!(
-        book_id: rand(1..30),
-        user_id: rand(1..30),
-        comment: Faker::Lorem.sentence(word_count: 3)
-    )
-end
-30.times do
-    Bookcategory.create!(
-        name: Faker::Book.name
-    )
-end
+Book.destroy_all
+Book.create!([{
+  title: "Physics",
+  author: "Pete Docter",
+  likes: 4,
+  category_id: 1,
+  url: "https://res.cloudinary.com/dws2bgxg4/image/upload/cld-sample.jpg"
+},
+{
+  title: "Biology",
+  author: "Pete Docter",
+  likes: 4,
+  category_id: 2,
+  url: "https://res.cloudinary.com/dws2bgxg4/image/upload/cld-sample.jpg"
+  
+},
+{
+ title: "English",
+  author: "Pete Doct",
+  likes: 4,
+  category_id: 3,
+  url: "https://res.cloudinary.com/dws2bgxg4/image/upload/cld-sample.jpg"
+}])
