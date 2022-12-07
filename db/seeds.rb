@@ -59,6 +59,4 @@ Book.create!([{
    }
 
 ])
-Review.create!([{
-    
-}])
+
