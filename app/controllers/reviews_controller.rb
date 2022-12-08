@@ -24,14 +24,6 @@ class ReviewsController < ApplicationController
 
     private
 
-    # def review_params
-    #     params.permit(:book_id, :user_id, :comment)
-    # end
-
-
-  # rescue ActiveRecord::RecordInvalid => e
-  #   render json: { errors: e.record.errors.full_messages }, status: :unprocessable_entity
-
   def render_not_found_response
     render json: { error: "Validation errors" }, status: :not_found
   end
