@@ -30,6 +30,4 @@ test:
 
 production:
   <<: *default
-  database: bookFinder_production
-  username: bookFinder
-  password: <%= ENV["PRAC_DATABASE_PASSWORD"] %>
+  url: <%= ENV["DATABASE_URL"] %>
