@@ -1,5 +1,4 @@
 #create a user using the faker gem
-
 Book.destroy_all
 
 12.times do

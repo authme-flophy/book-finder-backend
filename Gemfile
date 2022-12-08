@@ -6,7 +6,12 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 gem "rails", "~> 7.0.4"
 
 # Use sqlite3 as the database for Active Record
-gem "sqlite3", "~> 1.4"
+
+gem 'bcrypt', '~> 3.1', '>= 3.1.12'
+
+gem 'pg', '~> 1.4', '>= 1.4.5'
+
+gem 'active_model_serializers'
 
 gem "active_model_serializers"
 

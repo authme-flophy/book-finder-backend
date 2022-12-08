@@ -16,4 +16,5 @@ class BooksController < ApplicationController
   def render_not_found_response
     render json: { error: "Validation errors" }, status: :not_found
   end
+
 end
