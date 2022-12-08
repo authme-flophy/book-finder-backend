@@ -1,12 +1,14 @@
 class BookcategoriesController < ApplicationController
     def index
-        @bookcategories = BookCategory.all
+        @bookcategories = Bookcategory.all
     end
+    #if invalid id is given render error
     def show
-        @bookcategories = BookCategory.find(params[:id])
+        books = Bookcategory.find(params[:id])
+    
     end
     def create
-        @bookcategory = BookCategory.new(bookcategory_params)
+        @bookcategory = Bookcategory.new(bookcategory_params)
         if @bookcategory.save
         render json: @bookcategory
         else

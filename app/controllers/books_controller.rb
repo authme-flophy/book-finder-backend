@@ -13,13 +13,16 @@ class BooksController < ApplicationController
             render json: @book.errors, status: :unprocessable_entity
         end
     end
-  #display books and authors and reviews
+  #associate books with book categories if id is nill render error 404 error
   def show
-    @book = Book.find(params[:id])
-    render json: @book
-    @reviews = Review.where(book_id: @book.id)
-    @book_category = BookCategory.where(book_id: @book.id)
+    books = Book.find(params[:id])
+    if books
+      render json: books
+    else
+      render_404
+    end
   end
+
 
   def update
     @book = Book.find(params[:id])
