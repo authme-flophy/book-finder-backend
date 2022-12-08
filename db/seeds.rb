@@ -1,5 +1,16 @@
 #create a user using the faker gem
+
 Book.destroy_all
+
+12.times do
+    User.create!(
+        name: Faker::Name.name,
+        email: Faker::Internet.email,
+        username: Faker::Internet.username,
+        password: Faker::Internet.password
+    )
+end
+
 Book.create!([{
     id: 1,
   title: "the love hypothesis",
@@ -101,6 +112,8 @@ Book.create!([{
     }
    
 ])
+
+
 Review.create!([{
     user_id: rand(1..12), 
     book_id: rand(1..12),    
