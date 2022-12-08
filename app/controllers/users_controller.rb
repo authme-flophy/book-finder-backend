@@ -1,50 +1,42 @@
 class UsersController < ApplicationController
-    skip_before_action :redirect_user, only: [:new, :create]
-
-    def show
-        @user = User.find(params[:id])
+    before_action :authenticate, except: [:index, :show, :create]
+    def index 
+        user = User.all
+        #json_response(@user) 
+        render json:user
     end
 
-    def new
-        @user = User.new
+    def show
+        user = User.find(params[:id])
+        # json_response(@user)
+        render json: user        
     end
 
     def create
-        @user = User.new(user_params)
+        user = User.create!(user_params)
+        session[:user_id] = user.id
+        # json_response(@user, status = 201)
+        render json: user, status: :created
 
-        if @user.save
-            flash[:message] = "Account created, please log in!"
-            redirect_to login_path  
-        else
-            render :new
-        end
-    end
-
-    def edit
-        @user = User.find(params[:id])
     end
 
     def update
-        @user = User.find(params[:id])
-        @user.update_attributes(user_params) 
-        if @user.save
-            flash[:message] = "Account successfully updated!"
-            redirect_to user_path(@user)   
-        else
-            render :edit 
-        end
+        @user = user.find(params[:id])
+        @user.update(user_params)
+        json_response(@user, status = 200)
     end
 
     def destroy
-        @user = User.find(params[:id])
-        Review.where(user_id: session[:user_id]).destroy_all
+        @user = user.find(params[:id])
         @user.destroy
-        session.clear
-        redirect_to '/login' 
+        json_response({message: "#{@user.name} deleted successfuly"}, status= 204)
     end
 
+    
     private
 
+
     def user_params
-        params.require(:user).permit(:username, :password, :password_confirmation)
+        params.permit(:name, :email,:username, :password)
     end
+end
