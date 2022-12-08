@@ -17,7 +17,7 @@ Book.create!([{
   author: "Ali Hazelwood",
   likes: 4,
   category_id: 1,
-  url: " https://res.cloudinary.com/dooe2s1sd/image/upload/v1670396133/love_hypos_pvbj7z.jpg"
+  image_url: " https://res.cloudinary.com/dooe2s1sd/image/upload/v1670396133/love_hypos_pvbj7z.jpg"
 },
 {
     id: 2,
@@ -25,7 +25,7 @@ Book.create!([{
   author: "Kiaren Scott",
   likes: 4,
   category_id: 2,
-  url: "https://res.cloudinary.com/dooe2s1sd/image/upload/v1670396659/kiss_and_tell_pl1ffu.jpg"
+  image_url: "https://res.cloudinary.com/dooe2s1sd/image/upload/v1670396659/kiss_and_tell_pl1ffu.jpg"
   
 },
 {
@@ -34,7 +34,7 @@ Book.create!([{
   author: "Puj Palacio",
   likes: 4,
   category_id: 3,
-  url: "https://res.cloudinary.com/dooe2s1sd/image/upload/v1670396197/wonder_fs004c.jpg"
+  image_url: "https://res.cloudinary.com/dooe2s1sd/image/upload/v1670396197/wonder_fs004c.jpg"
 },
 {
     id: 4,
@@ -42,7 +42,7 @@ Book.create!([{
      author: "Stephene King",
      likes: 4,
      category_id: 3,
-     url: "https://res.cloudinary.com/dooe2s1sd/image/upload/v1670396308/scarycat_grwexh.jpg"
+     image_url: "https://res.cloudinary.com/dooe2s1sd/image/upload/v1670396308/scarycat_grwexh.jpg"
    },
    {
     id: 5,
@@ -50,7 +50,7 @@ Book.create!([{
      author: "Shirley Hughes",
      likes: 4,
      category_id: 3,
-     url: "https://res.cloudinary.com/dooe2s1sd/image/upload/v1670396255/alfie_h3gqhn.jpg"
+     image_url: "https://res.cloudinary.com/dooe2s1sd/image/upload/v1670396255/alfie_h3gqhn.jpg"
    },
    {
     id: 6,
@@ -58,7 +58,7 @@ Book.create!([{
      author: "Jack Huggins",
      likes: 4,
      category_id: 3,
-     url: "https://res.cloudinary.com/dooe2s1sd/image/upload/v1670396380/jack_svjkml.jpg"
+     image_url: "https://res.cloudinary.com/dooe2s1sd/image/upload/v1670396380/jack_svjkml.jpg"
    },
    {
     id: 7,
@@ -66,7 +66,7 @@ Book.create!([{
      author: "alberto marpez",
      likes: 4,
      category_id: 3,
-     url: "https://i.pinimg.com/564x/fd/41/58/fd4158a6b9ae6ac9ae1201dbdb7f98ee.jpg
+     image_url: "https://i.pinimg.com/564x/fd/41/58/fd4158a6b9ae6ac9ae1201dbdb7f98ee.jpg
      (87 kB)
      "
    },
@@ -76,7 +76,7 @@ Book.create!([{
      author: "rhoda byryne",
      likes: 5,
      category_id: 3,
-     url: "https://i.pinimg.com/564x/00/63/62/006362472ae7c176fed485b662063e21.jpg"
+     image_url: "https://i.pinimg.com/564x/00/63/62/006362472ae7c176fed485b662063e21.jpg"
     },
    {
     id: 9,
@@ -84,7 +84,7 @@ Book.create!([{
      author: "rhoda byryne",
      likes: 4,
      category_id: 3,
-     url: "https://i.pinimg.com/564x/3f/62/de/3f62de632678e2743bdd96dd2ebafc3e.jpg"
+     image_url: "https://i.pinimg.com/564x/3f/62/de/3f62de632678e2743bdd96dd2ebafc3e.jpg"
     },
    {
     id: 10,
@@ -92,7 +92,7 @@ Book.create!([{
      author: "napoleon hill",
      likes: 4,
      category_id: 3,
-     url: "https://i.pinimg.com/564x/39/0d/73/390d7306b8e3dcd73acb267726036853.jpg"
+     image_url: "https://i.pinimg.com/564x/39/0d/73/390d7306b8e3dcd73acb267726036853.jpg"
     },
    {
     id: 11,
@@ -100,7 +100,7 @@ Book.create!([{
      author: "dr wayne dyer",
      likes: 4,
      category_id: 3,
-     url: "https://i.pinimg.com/564x/33/ba/78/33ba7898d5ed7db034749cac18e00102.jpg"
+     image_url: "https://i.pinimg.com/564x/33/ba/78/33ba7898d5ed7db034749cac18e00102.jpg"
     },
    {
     id: 12,
@@ -108,7 +108,7 @@ Book.create!([{
      author: "paulo coelho",
      likes: 4,
      category_id: 3,
-     url: "https://i.pinimg.com/564x/a1/38/95/a13895c5b37147767afc9d123a5aed29.jpg"
+     image_url: "https://i.pinimg.com/564x/a1/38/95/a13895c5b37147767afc9d123a5aed29.jpg"
     }
    
 ])
