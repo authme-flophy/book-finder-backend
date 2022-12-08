@@ -1,23 +1,23 @@
 class SessionsController < ApplicationController
-    def create_session 
-        # @user = user.authenticate(params[:email], params[:password])
-        # if @user
-        #     session[:user_id] = @user.id 
-        #     json_response(@user)
-        # else
-        #     json_response({message: "Wrong Email or Password. Try Again"})
-        # end
-        user = User.find_by(email: params[:email])
-        if (user&.authenticate(params[:password]))
-            session[:user] = user.id
-            render json: user, status: :created
-        else
-            render json: {error: "User not found"}, status: :unauthorized
-        end
-    end
+  skip_before_action :verify_authenticity_token, raise: false
 
-    def destroy 
-        session[:user_id] = nil
-        json_response({message: "Successfully logged out!"})
+  def create
+    user = User.find_by(username: params[:username])
+    if user&.authenticate(params[:password])
+      session[:user_id] = user.id
+      render json: user, status: :created
+    else
+      render json: { errors: ["Invalid Username or Password"] }, status: :unauthorized
     end
+  end
+
+  def destroy
+    if session[:user_id]
+      reset_session
+      head :no_content
+    else
+      render json: { errors: ["Invalid Username or Password"] }, status: :unauthorized
+    end
+  end
+
 end
